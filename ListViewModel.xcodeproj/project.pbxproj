@@ -10,6 +10,8 @@
 		CC7A09101A9ABD6200E4E78A /* ListViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CC7A090F1A9ABD6200E4E78A /* ListViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC7A09161A9ABD6200E4E78A /* ListViewModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7A090A1A9ABD6200E4E78A /* ListViewModel.framework */; };
 		CC7A091D1A9ABD6200E4E78A /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A091C1A9ABD6200E4E78A /* ListViewModelTests.swift */; };
+		CC7A09271A9ABD8700E4E78A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7A09261A9ABD8700E4E78A /* ReactiveCocoa.framework */; };
+		CC7A092A1A9ABD9900E4E78A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A09291A9ABD9900E4E78A /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		CC7A09151A9ABD6200E4E78A /* ListViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7A091B1A9ABD6200E4E78A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7A091C1A9ABD6200E4E78A /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		CC7A09261A9ABD8700E4E78A /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
+		CC7A09291A9ABD9900E4E78A /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7A09271A9ABD8700E4E78A /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +76,9 @@
 		CC7A090C1A9ABD6200E4E78A /* ListViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC7A09291A9ABD9900E4E78A /* ListViewModel.swift */,
 				CC7A090F1A9ABD6200E4E78A /* ListViewModel.h */,
+				CC7A09281A9ABD8A00E4E78A /* Frameworks */,
 				CC7A090D1A9ABD6200E4E78A /* Supporting Files */,
 			);
 			path = ListViewModel;
@@ -100,6 +107,14 @@
 				CC7A091B1A9ABD6200E4E78A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC7A09281A9ABD8A00E4E78A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC7A09261A9ABD8700E4E78A /* ReactiveCocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7A092A1A9ABD9900E4E78A /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,25 +335,36 @@
 		CC7A09211A9ABD6200E4E78A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ListViewModel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CC7A09221A9ABD6200E4E78A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ListViewModel/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
